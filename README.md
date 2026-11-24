@@ -77,6 +77,28 @@ python xsstrike.py
 - [Usage](https://github.com/s0md3v/XSStrike/wiki/Usage)
 - [Compatibility & Dependencies](https://github.com/s0md3v/XSStrike/wiki/Compatibility-&-Dependencies)
 
+### DOM XSS & postMessage detection
+XSStrike statically analyses inline JavaScript for DOM-based XSS in addition to
+the legacy source/sink highlighter:
+
+- `core/domScanner.py` tracks taint from DOM sources (`location.hash`,
+  `document.URL`, `window.name`, ...) to sinks (`innerHTML`, `document.write`,
+  `eval`, ...) and reports structured findings (`dom-xss`).
+- `postMessage` handlers (`addEventListener('message', ...)` / `onmessage`)
+  are audited: `event.data` flowing into a sink is reported as
+  `postmessage-xss`, and the origin validation is classified as
+  `strict` / `weak` / `none` (`postmessage-no-origin-check` when data is used
+  without a strict check).
+- Findings are printed by the regular `scan` mode (disable with `--skip-dom`).
+
+Detection rate is benchmarked against 3 vulnerable-app ranges
+(DVWA, WebGoat, xss-game style fixtures in `tests/benchmarks/`):
+
+```
+python3 tests/benchmark_dom.py   # per-range recall/precision table
+python3 -m unittest discover -s tests
+```
+
 ### FAQ
 - [It says fuzzywuzzy isn't installed but it is.](https://github.com/s0md3v/XSStrike/wiki/FAQ#it-says-fuzzywuzzy-is-not-installed-but-its)
 - [What's up with Blind XSS?](https://github.com/s0md3v/XSStrike/wiki/FAQ#whats-up-with-blind-xss)

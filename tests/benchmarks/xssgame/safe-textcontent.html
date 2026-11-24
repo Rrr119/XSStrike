@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head><title>xss-game :: safe level</title></head>
+<body>
+<div id="out"></div>
+<script>
+var hash = location.hash.slice(1);
+document.getElementById('out').textContent = hash;
+</script>
+</body>
+</html>

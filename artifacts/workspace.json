@@ -1,0 +1,17 @@
+{
+  "root": "/home/dev/feedback/uid36763",
+  "B": "/home/dev/feedback/uid36763",
+  "sha": "f4b04c2458ce6a9efb02872b8055bca3399f73d7",
+  "wslDistro": "Ubuntu-26.04",
+  "source": {
+    "owner": "s0md3v",
+    "repo": "XSStrike",
+    "sha": "f4b04c2458ce6a9efb02872b8055bca3399f73d7"
+  },
+  "fork": {
+    "owner": "Rrr119",
+    "repo": "XSStrike",
+    "cloneUrl": "https://github.com/Rrr119/XSStrike.git"
+  },
+  "at": "2026-11-24T04:11:11.003Z"
+}

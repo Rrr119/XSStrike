@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>DVWA :: DOM Based XSS (high)</title></head>
+<body>
+<div id="container"></div>
+<script>
+var lang = location.hash.slice(1);
+var selected = 'English';
+switch (lang) {
+    case 'French':
+        selected = 'French';
+        break;
+    case 'German':
+        selected = 'German';
+        break;
+}
+document.write('<option>' + selected + '</option>');
+</script>
+</body>
+</html>

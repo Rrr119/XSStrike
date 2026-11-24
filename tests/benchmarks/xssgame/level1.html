@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head><title>xss-game :: level 1</title></head>
+<body>
+<div id="q"></div>
+<script>
+var q = decodeURIComponent(location.search.split('=')[1]);
+document.getElementById('q').innerHTML = q;
+</script>
+</body>
+</html>

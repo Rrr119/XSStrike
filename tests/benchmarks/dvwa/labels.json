@@ -1,0 +1,5 @@
+{
+  "low.html": {"vulnerable": true, "type": "dom-xss"},
+  "medium.html": {"vulnerable": true, "type": "dom-xss"},
+  "high.html": {"vulnerable": false, "type": null}
+}

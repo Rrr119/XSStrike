@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>WebGoat :: postMessage lesson (hardened)</title></head>
+<body>
+<div id="msg"></div>
+<script>
+window.addEventListener('message', function (e) {
+    if (e.origin !== 'https://trusted.example.com') {
+        return;
+    }
+    document.getElementById('msg').textContent = e.data;
+});
+</script>
+</body>
+</html>

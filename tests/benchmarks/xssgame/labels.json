@@ -1,0 +1,5 @@
+{
+  "level1.html": {"vulnerable": true, "type": "dom-xss"},
+  "postmessage-weak.html": {"vulnerable": true, "type": "postmessage-xss"},
+  "safe-textcontent.html": {"vulnerable": false, "type": null}
+}

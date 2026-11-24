@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>xss-game :: postMessage level</title></head>
+<body>
+<div id="out"></div>
+<script>
+window.onmessage = function (evt) {
+    if (evt.origin.indexOf('example.com') === -1) {
+        return;
+    }
+    document.write(evt.data);
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "uid": "36763",
+  "harness": "Codex CLI",
+  "snapshotUrl": "https://github.com/Rrr119/XSStrike/commit/f4b04c2458ce6a9efb02872b8055bca3399f73d7",
+  "harnessVersion": "codex-cli 0.167.2",
+  "operatingSystem": "Ubuntu 26.04.1 LTS",
+  "operatingSystemCell": [
+    "MacOS/Linux"
+  ],
+  "outputDirectory": "/home/dev/feedback/uid36763",
+  "wslDistro": "Ubuntu-26.04",
+  "B": {
+    "success": false,
+    "canceled": true,
+    "error": "任务已取消",
+    "side": "B"
+  }
+}

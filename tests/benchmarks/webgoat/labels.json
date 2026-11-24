@@ -1,0 +1,5 @@
+{
+  "dom-eval.html": {"vulnerable": true, "type": "dom-xss"},
+  "postmessage-no-check.html": {"vulnerable": true, "type": "postmessage-xss"},
+  "postmessage-strict.html": {"vulnerable": false, "type": null}
+}

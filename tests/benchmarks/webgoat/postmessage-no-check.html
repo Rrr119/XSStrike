@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head><title>WebGoat :: postMessage lesson</title></head>
+<body>
+<div id="msg"></div>
+<script>
+window.addEventListener('message', function (e) {
+    document.getElementById('msg').innerHTML = e.data;
+});
+</script>
+</body>
+</html>

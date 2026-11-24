@@ -7,6 +7,7 @@ from core.colors import end, green, que
 import core.config
 from core.config import xsschecker, minEfficiency
 from core.dom import dom
+from core.domScanner import scan_dom
 from core.filterChecker import filterChecker
 from core.generator import generator
 from core.htmlParser import htmlParser
@@ -40,6 +41,16 @@ def scan(target, paramData, encoding, headers, delay, timeout, skipDOM, skip):
             for line in highlighted:
                 logger.no_format(line, level='good')
             logger.red_line(level='good')
+        findings = scan_dom(response)
+        for finding in findings:
+            if finding['type'] == 'postmessage-no-origin-check':
+                logger.good('postMessage handler %s origin validation (%s) at line %s'
+                            % ('without' if finding['origin_check'] == 'none' else 'with weak',
+                               finding['origin_check'], finding['line']))
+            else:
+                logger.vuln('%s: %s -> %s at line %s [severity: %s]'
+                            % (finding['type'], finding['source'], finding['sink'],
+                               finding['line'], finding['severity']))
     host = urlparse(target).netloc  # Extracts host out of the url
     logger.debug('Host to scan: {}'.format(host))
     url = getUrl(target, GET)

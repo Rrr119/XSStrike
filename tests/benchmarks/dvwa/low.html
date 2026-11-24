@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head><title>DVWA :: DOM Based XSS (low)</title></head>
+<body>
+<div id="container"></div>
+<script>
+var lang = document.location.href.substring(document.location.href.indexOf("default=") + 8);
+document.write("<option value='" + lang + "'>" + decodeURI(lang) + "</option>");
+</script>
+</body>
+</html>

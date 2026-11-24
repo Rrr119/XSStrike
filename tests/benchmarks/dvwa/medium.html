@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head><title>DVWA :: DOM Based XSS (medium)</title></head>
+<body>
+<div id="result"></div>
+<script>
+var q = location.search.substring(1).split('=')[1];
+document.getElementById('result').innerHTML = decodeURIComponent(q);
+</script>
+</body>
+</html>
